@@ -7,7 +7,7 @@ import { requestUsers } from "../../redux/slices/users";
 import UserCard from "../../components/user-card";
 import UserProfileModal from "../user-profile-modal";
 
-const USERS_PER_PAGE = 9;
+const USERS_PER_PAGE = 8;
 
 export default function MainSection() {
   const { isLoading, isError, data } = useSelector(
@@ -17,7 +17,7 @@ export default function MainSection() {
 
   /**
    * intersection observer designed to observe the last card in the collection
-   * if it's 100% visible, we request more cards to be showen
+   * if it's 100% visible, we request more cards to be showed
    */
   const observer = useRef(
     new IntersectionObserver(
@@ -37,7 +37,7 @@ export default function MainSection() {
   let [lastCard, setLastCard] = useState<HTMLElement | null>(null);
 
   /**
-   * register dom element refrence if its the last card
+   * register dom element reference if its the last card
    * in the collection
    */
   const selectIfLastCard = (domElem: HTMLElement | null, index: number) => {
@@ -52,8 +52,8 @@ export default function MainSection() {
 
   /**
    * register an observer to observe last box visibility
-   * when it is 100% visible, it rigers a callback to
-   * triger a request for more cards
+   * when it is 100% visible, it calls a callback function to
+   * trigger a request for more cards
    */
   useEffect(() => {
     const observerObj = observer.current;
