@@ -7,7 +7,6 @@ export interface Response<T> {
   limit: number;
 }
 
-
 export const baseAxios = axios.create({
   baseURL: "https://dummyapi.io/data/v1",
   headers: {
