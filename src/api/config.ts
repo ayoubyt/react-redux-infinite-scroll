@@ -7,9 +7,10 @@ export interface Response<T> {
   limit: number;
 }
 
+
 export const baseAxios = axios.create({
   baseURL: "https://dummyapi.io/data/v1",
   headers: {
-    "app-id": "62066a2f508e80d232ca6a72"
+    "app-id": process.env.REACT_APP_API_APP_ID || ""
   }
 });
